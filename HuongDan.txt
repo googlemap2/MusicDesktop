@@ -1,0 +1,3 @@
+B1: Chạy file Music.sln.
+B2: Chọn Solution Platforms -> Configuration  Manager ->Platforms -> Edit -> Select x86 .
+B3: Sau đó Solution Platforms -> x86 và Start Project.

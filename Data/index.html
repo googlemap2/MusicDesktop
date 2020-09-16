@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"
+    <title></title>
+    <link href="CSS/main.css" rel="stylesheet" />
+    <link href="CSS/all.css" rel="stylesheet">
+    <script src="JS/howler.js"></script>
+</head>
+
+<body>
+    <audio src="mp3/The Fox.mp3" type="audio/mpeg"></audio>
+    <div class="wrapper">
+        <div class="player-default">
+            <div id="container-tracks" class="container-tracks">
+                <div id="task-tracks" class="task-tracks" onclick="hideTracks(this.id)">
+                  <h2>List Song</h2>
+                </div>
+                <div id="tracks" class="tracks">
+                </div>
+            </div>
+            <div class="control">
+                <div id="the-song" class="the-song">
+                    <p id="song"></p>
+                </div>
+                <div id="disc-img" class="disc-img">
+                    <canvas id="canvas" width="1000" height="240"></canvas>
+                </div>
+                <div id="timing" class="timing">
+                    <input type="range" value="0" step="any" id="time" class="time" name="time"/>
+                    <label for="time" id="loadTime">00:00:00</label>
+                </div>
+                <div class="controller">
+                    <i id="prev" class="fas fa-backward" onclick="controlMain(this.id)"></i>
+                    <i id="play" class="fas fa-play" onclick="controlMain(this.id)"></i>
+                    <i id="pause" class="fas fa-pause" onclick="controlMain(this.id)"></i>
+                    <i id="next" class="fas fa-forward" onclick="controlMain(this.id)"></i>
+                    <i id="auto-next" class="fas fa-random" onclick="controlMain(this.id)"></i>
+                    <i id="loop" class="fas fa-undo" onclick="controlMain(this.id)"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="JS/main.js">
+    </script>
+
+</body>
+</html>

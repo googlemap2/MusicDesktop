@@ -1,0 +1,357 @@
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    position: relative;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+:root {
+    --back-ground: #121212;
+    --text-color: #ffffff;
+    --color-light: #eeeeee;
+    --color-black: #1f1f1f;
+}
+
+.wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*background: var(--back-ground);*/
+    background: url(../IMG/background2.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+.player-default {
+    display: flex;
+    flex-direction: row;
+}
+
+    .player-default > .get-dialogFolder {
+        position: absolute;
+        width: 5em;
+        height: 2em;
+        top: 0;
+        left: 10em;
+    }
+
+        .player-default > .get-dialogFolder > .btn-localF {
+            background: var(--color-black);
+            color: var(--text-color);
+        }
+
+
+    .player-default > .container-tracks {
+        position: relative;
+        width: 20em;
+        height: 100vh;
+        z-index: 2;
+    }
+
+        .player-default > .container-tracks > .task-tracks {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 12em;
+            height: 5vh;
+            background: #696969;
+        }
+
+            .player-default > .container-tracks > .task-tracks > h2 {
+                display: block;
+                color: var(--text-color);
+            }
+
+        .player-default > .container-tracks > .tracks {
+            position: absolute;
+            width: 100%;
+            min-width: 5em;
+            font-size: 1.5em;
+            padding: 0.5em;
+            left: 0;
+            background: var(--color-black);
+            height: 95vh;
+            transition-property: left;
+            transition-duration: 1s;
+            overflow: scroll;
+        }
+
+.player-default > .container-tracks > .tracks::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: #aaa;
+}
+
+/*.player-default > .container-tracks > .tracks::::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+            /* Handle on hover */
+/*.player-default > .container-tracks > .tracks::::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }*/
+
+
+.item {
+    font-family: Lucida Console;
+    text-overflow: ellipsis;
+    color: #f7f7f7;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    background: #555555;
+    margin-top: 0.5em;
+    border-radius: 4px;
+    padding-left: 0.5em;
+    transition: all 0.2s linear;
+}
+
+/*.player-default > .container-tracks > .tracks > p:hover {
+        background: #c054be;
+        color: #222222;
+    }*/
+
+.reset-ani {
+    background: #555555;
+    color: #f7f7f7;
+}
+
+.ani-listsong {
+    -webkit-box-shadow: -14px 0px 5px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: -14px 0px 5px 5px rgba(0,0,0,0.75);
+    box-shadow: -14px 0px 5px 5px rgba(0,0,0,0.75);
+    border-radius: 0;
+    margin-left: 0.5em;
+    transition: all 0.2s linear;
+}
+
+#canvas {
+    z-index: 800;
+}
+
+.player-default > .control {
+    flex: 1;
+    display: inline-flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+    .player-default > .control > .the-song {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right, #e72a3a 10%, #1b1a1a 50%, #331abd 60%);
+        background-size: auto auto;
+        background-clip: border-box;
+        background-size: 200% auto;
+        background-clip: text;
+        /*cắt trữ theo nền*/
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 10s linear infinite;
+    }
+
+        .player-default > .control > .the-song > p {
+            font-family: "Times New Roman", Times, serif;
+            color: #f7f7f7;
+            font-size: 2em;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 700;
+            font-family: "Josefin Sans", sans-serif;
+        }
+
+    .player-default > .control > .disc-img {
+        flex: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .player-default > .control > .disc-img > img {
+            height: 20em;
+        }
+
+    .player-default > .control > .controller {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .player-default > .control > .controller > i {
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            margin: 2em;
+        }
+
+        .player-default > .control > .controller > .fas:hover {
+            background: linear-gradient(to right top, #4a4d51, #697174, #8c9796, #b4beb7, #e2e5da);
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+/*style inpt range*/
+
+.timing {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding-left: 2em;
+}
+
+.timing > label {
+    margin-left: 1em;
+}
+
+.time{
+
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 90%;
+    margin: 7px 0;
+}
+
+    input[type=range]:focus {
+        outline: none;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 6px;
+        cursor: pointer;
+        box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+        background: #a6a6a6;
+        border-radius: 25px;
+        border: 0px solid #002c2c;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+        border: 0.7px solid rgba(0, 0, 0, 0);
+        height: 20px;
+        width: 17px;
+        border-radius: 5px;
+        background: #e0e2ef;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -7px;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #a6a6a6;
+    }
+
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 6px;
+        cursor: pointer;
+        box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+        background: #a6a6a6;
+        border-radius: 25px;
+        border: 0px solid #002c2c;
+    }
+
+    input[type=range]::-moz-range-thumb {
+        box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+        border: 0.7px solid rgba(0, 0, 0, 0);
+        height: 20px;
+        width: 17px;
+        border-radius: 5px;
+        background: #e0e2ef;
+        cursor: pointer;
+    }
+
+    input[type=range]::-ms-track {
+        width: 100%;
+        height: 6px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+
+    input[type=range]::-ms-fill-lower {
+        background: #313131;
+        border: 0px solid #002c2c;
+        border-radius: 50px;
+        box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    }
+
+    input[type=range]::-ms-fill-upper {
+        background: #a6a6a6;
+        border: 0px solid #002c2c;
+        border-radius: 50px;
+        box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    }
+
+    input[type=range]::-ms-thumb {
+        box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+        border: 0.7px solid rgba(0, 0, 0, 0);
+        height: 20px;
+        width: 17px;
+        border-radius: 5px;
+        background: #e0e2ef;
+        cursor: pointer;
+        height: 6px;
+    }
+
+    input[type=range]:focus::-ms-fill-lower {
+        background: #a6a6a6;
+    }
+
+    input[type=range]:focus::-ms-fill-upper {
+        background: #ffffff;
+    }
+
+
+
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes anidisc {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(160deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
